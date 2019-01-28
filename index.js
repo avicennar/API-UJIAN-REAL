@@ -135,6 +135,14 @@ app.post('/deletekategori/:id', (req,res) => {
     })
 })
 
+app.post('/deleteconnlist/:id', (req,res) => {
+    var sql = `delete from movcat where idmovie=${req.params.id};`;
+    conn.query(sql,(err,result)=>{
+        res.send(result)
+        console.log(result)
+    })
+})
+
 
 /////////////////////=[]=\\\\\\\\\\\\\\\\\\\\\\\
 
